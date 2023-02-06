@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://pixabay.com/api/';
-const KEY_API  = '32994502-e3e50bc458d4273e97628220b';
+const BASE_URL = '';
+const KEY_API  = '';
 
 export default class SearchService {
   searchQuery;
@@ -19,11 +19,20 @@ export default class SearchService {
     this.page = 1;
     this.per_page = per_page;
   }
+  
+// назад
+
+  incrementBackPage() {
+    this.page -= 1;
+  }
+
+
+
+// кнопка вперед
 
   incrementPage() {
     this.page += 1;
   }
-
   isLastPage() {
     return !(this.page < this.pagesQty);
   }
